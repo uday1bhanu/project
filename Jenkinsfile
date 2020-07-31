@@ -7,19 +7,13 @@ pipeline {
       }
     }
     stage('Compile') {
-      tools {
-        gradle 'gradle4'
-      }
       steps {
-        sh 'gradle clean compileJava'
+        sh './gradlew clean compileJava'
       }
     }
     stage('Test') {
-      tools {
-        gradle 'gradle4'
-      }
       steps {
-        sh 'gradle test'
+        sh './gradlew test'
       }
     }
     stage('Package') {
