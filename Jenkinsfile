@@ -1,10 +1,10 @@
 pipeline {
   agent { label 'mynode' }
   stages {
-    stage('Source') {
-      steps {
-        git 'https://github.com/aparnagk76/project.git'
-      }
+    stage('Checkout code') {
+        steps {
+            checkout scm
+        }
     }
     stage('Compile') {
       steps {
